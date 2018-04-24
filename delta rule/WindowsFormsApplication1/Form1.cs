@@ -9,7 +9,7 @@ namespace WindowsFormsApplication1
 {
     public partial class Form1 : Form
     {
-        static double learningRate = 0.1;
+        static double learningRate = 0.2;
         List<double[]> data;
         Chart mychart;
         List<double> slope = new List<double>();
@@ -22,6 +22,8 @@ namespace WindowsFormsApplication1
         int numItteration = 100;
         bool isChartUpdateEnabled = false;
         int chartstepSize = 10;
+        int accuracy = 90;
+        bool isShuffleOn = false;
 
         public Form1()
         {
@@ -54,10 +56,14 @@ namespace WindowsFormsApplication1
             }
             catch (Exception e) { }
 
-            mychart.ChartAreas[0].AxisY.Maximum = 6;
-            mychart.ChartAreas[0].AxisY.Minimum = -4;
-            mychart.ChartAreas[0].AxisX.Maximum = 4;
-            mychart.ChartAreas[0].AxisX.Minimum = -1;
+            //mychart.ChartAreas[0].AxisY.Maximum = 6;
+            //mychart.ChartAreas[0].AxisY.Minimum = -4;
+            //mychart.ChartAreas[0].AxisX.Maximum = 4;
+            //mychart.ChartAreas[0].AxisX.Minimum = -1;
+            mychart.ChartAreas[0].AxisY.Maximum = 1.1;
+            mychart.ChartAreas[0].AxisY.Minimum = -0.2;
+            mychart.ChartAreas[0].AxisX.Maximum = 1.1;
+            mychart.ChartAreas[0].AxisX.Minimum = -0.2;
             chart1.ChartAreas[0].AxisX.MajorGrid.LineWidth = 0;
             chart1.ChartAreas[0].AxisY.MajorGrid.LineWidth = 0;
             mychart.Series["Series1"].ChartType = SeriesChartType.Point;
@@ -103,10 +109,18 @@ namespace WindowsFormsApplication1
                 lbl_w2.Text = weightsHistory[chart_index][1].ToString();
                 chart_index = chart_index + chartstepSize;
             }
+            if (chart_index >= slope.Count & isChartUpdateEnabled)
+            {
+                drawLine(slope[slope.Count - 1], bias[slope.Count - 1]);
+
+                lbl_w1.Text = weightsHistory[slope.Count - 1][0].ToString();
+                lbl_w2.Text = weightsHistory[slope.Count - 1][1].ToString();
+                isChartUpdateEnabled = false;
+            }
 
         }
 
-        public static List<double[]> readFile(string fileLocation = "data.csv")
+        public static List<double[]> readFile(string fileLocation = "data-3.csv")
         {
 
             List<double[]> listA = new List<double[]>();
@@ -146,10 +160,11 @@ namespace WindowsFormsApplication1
 
             for (int c = 0; c < dataColumnCount - 1; c++)
             {
-                double rand = randomNumGenerator.Next(-10, 10);
+                double rand = randomNumGenerator.Next(-5, 5);
                 weights.Add(rand / 10);
             }
-
+            weights[0] = 1;
+            weights[1] = -1;
             //draw the intial classification boundary
             drawLine(weights[0], weights[1]);
             lbl_w1.Text = weights[0].ToString();
@@ -158,8 +173,12 @@ namespace WindowsFormsApplication1
             weightsHistory.Add(weightsdata);
 
             // loop the code for the desired itteration count
-            for (int i = 0; i < numItteration; i++)
+            //for (int i = 0; i < numItteration; i++)
+            int i = 0, error_count = 0;
+            while (i < numItteration)
             {
+                error_count = 0;
+                Shuffle(data);
 
                 // for each instance (row) itterate and adjust the weight
                 for (int j = 0; j < dataRowCount; j++)
@@ -178,6 +197,7 @@ namespace WindowsFormsApplication1
 
                     //calculate error
                     double instancError = (data[j][dataColumnCount - 1] - output);
+                    if (instancError != 0) error_count++;
 
 
                     // calculate delta and update weight
@@ -190,10 +210,17 @@ namespace WindowsFormsApplication1
                     weightsHistory.Add(weightsdata2);
                     slope.Add(weights[0]);
                     bias.Add(weights[1]);
-                    errorValues.Add(Math.Abs(instancError));
                 }
+
+                // increment i
+                i++;
+
+
+                errorValues.Add(error_count);
+                if ((100 * error_count / dataRowCount) < 10) break;
             }
 
+            File.WriteAllText("errorList.txt", String.Empty);
             // save values to text
             using (TextWriter tw = new StreamWriter("errorList.txt"))
             {
@@ -212,7 +239,8 @@ namespace WindowsFormsApplication1
             List<double> x = new List<double>();
             List<double> y = new List<double>();
 
-            for (double i = -1; i < 4;)
+            //for (double i = -1; i < 4;)
+            for (double i = -.1; i < 1.2;)
             {
                 x.Add(i);
                 //x1*w1 + x2*w2 > etta
@@ -274,5 +302,21 @@ namespace WindowsFormsApplication1
             lbl_lr.Text = learningRate + "";
 
         }
+
+
+        public static void Shuffle<T>(IList<T> list)
+        {
+            Random rng = new Random();
+            int n = list.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                T value = list[k];
+                list[k] = list[n];
+                list[n] = value;
+            }
+        }
+
     }
 }

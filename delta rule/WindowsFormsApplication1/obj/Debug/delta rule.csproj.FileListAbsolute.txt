@@ -4,3 +4,12 @@ E:\Course\intelligent computing\delta rule\WindowsFormsApplication1\obj\Debug\Wi
 E:\Course\intelligent computing\presentation-1\delta rule\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
 E:\Course\intelligent computing\presentation-1\delta rule\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 E:\Course\intelligent computing\presentation-1\delta rule\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+E:\Course\intelligent computing\delta-rule_git\delta rule\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+E:\Course\intelligent computing\delta-rule_git\delta rule\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+E:\Course\intelligent computing\delta-rule_git\delta rule\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+E:\Course\intelligent computing\delta-rule_git\delta rule\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+E:\Course\intelligent computing\delta-rule_git\delta rule\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+E:\Course\intelligent computing\delta-rule_git\delta rule\WindowsFormsApplication1\obj\Debug\delta rule.csproj.GenerateResource.Cache
+E:\Course\intelligent computing\delta-rule_git\delta rule\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+E:\Course\intelligent computing\delta-rule_git\delta rule\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+E:\Course\intelligent computing\delta-rule_git\delta rule\WindowsFormsApplication1\obj\Debug\delta rule.csprojResolveAssemblyReference.cache

@@ -1,0 +1,48 @@
+E:\Course\intelligent computing\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+E:\Course\intelligent computing\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+E:\Course\intelligent computing\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+E:\Course\intelligent computing\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+E:\Course\intelligent computing\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+E:\Course\intelligent computing\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+E:\Course\intelligent computing\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+E:\Course\intelligent computing\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+E:\Course\intelligent computing\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+E:\Course\intelligent computing\gradient descent for classification\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+E:\Course\intelligent computing\gradient descent for classification\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+E:\Course\intelligent computing\gradient descent for classification\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+E:\Course\intelligent computing\gradient descent for classification\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+E:\Course\intelligent computing\gradient descent for classification\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+E:\Course\intelligent computing\gradient descent for classification\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+E:\Course\intelligent computing\gradient descent for classification\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+E:\Course\intelligent computing\gradient descent for classification\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+E:\Course\intelligent computing\gradient descent for classification\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+E:\Course\intelligent computing\gradient descent for classification - 2\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+E:\Course\intelligent computing\gradient descent for classification - 2\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+E:\Course\intelligent computing\gradient descent for classification - 2\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+E:\Course\intelligent computing\gradient descent for classification - 2\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+E:\Course\intelligent computing\gradient descent for classification - 2\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+E:\Course\intelligent computing\gradient descent for classification - 2\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+E:\Course\intelligent computing\gradient descent for classification - 2\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+E:\Course\intelligent computing\gradient descent for classification - 2\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+E:\Course\intelligent computing\gradient descent for classification - 2\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+E:\Course\intelligent computing\gradient descent for classification - final\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+E:\Course\intelligent computing\gradient descent for classification - final\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+E:\Course\intelligent computing\gradient descent for classification - final\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+E:\Course\intelligent computing\gradient descent for classification - final\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+E:\Course\intelligent computing\gradient descent for classification - final\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+E:\Course\intelligent computing\gradient descent for classification - final\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+E:\Course\intelligent computing\gradient descent for classification - final\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+E:\Course\intelligent computing\gradient descent for classification - final\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+E:\Course\intelligent computing\gradient descent for classification - final\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+E:\Course\intelligent computing\gradient descent for classification - final - 2\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+E:\Course\intelligent computing\gradient descent for classification - final - 2\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+E:\Course\intelligent computing\gradient descent for classification - final - 2\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+E:\Course\intelligent computing\gradient descent for classification - final - 2\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+E:\Course\intelligent computing\gradient descent for classification - final - 2\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+E:\Course\intelligent computing\gradient descent for classification - final - 2\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+E:\Course\intelligent computing\gradient descent for classification - final - 2\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+E:\Course\intelligent computing\gradient descent for classification - final - 2\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+E:\Course\intelligent computing\gradient descent for classification - final - 2\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+E:\Course\intelligent computing\delta rule\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+E:\Course\intelligent computing\delta rule\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+E:\Course\intelligent computing\delta rule\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb

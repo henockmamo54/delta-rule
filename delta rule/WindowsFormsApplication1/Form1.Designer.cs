@@ -31,6 +31,9 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_start = new System.Windows.Forms.Button();
@@ -38,8 +41,6 @@
             this.btn_browse = new System.Windows.Forms.Button();
             this.txtfilelocation = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lbl_w2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -51,12 +52,20 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_iteration = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lbl_accuracy = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.chart2_errorperepoch = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2_errorperepoch)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // chart1
@@ -134,28 +143,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Location";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.Picture2;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(369, 193);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.pictureBox1);
-            this.groupBox3.Location = new System.Drawing.Point(585, 23);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(382, 218);
-            this.groupBox3.TabIndex = 16;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Perceptron";
-            // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.lbl_accuracy);
+            this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.lbl_w2);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.lbl_w1);
@@ -166,9 +157,9 @@
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.lbl_iteration);
             this.groupBox4.Controls.Add(this.label2);
-            this.groupBox4.Location = new System.Drawing.Point(591, 248);
+            this.groupBox4.Location = new System.Drawing.Point(582, 12);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(369, 163);
+            this.groupBox4.Size = new System.Drawing.Size(332, 78);
             this.groupBox4.TabIndex = 17;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Parameters";
@@ -176,7 +167,7 @@
             // lbl_w2
             // 
             this.lbl_w2.AutoSize = true;
-            this.lbl_w2.Location = new System.Drawing.Point(241, 52);
+            this.lbl_w2.Location = new System.Drawing.Point(270, 52);
             this.lbl_w2.Name = "lbl_w2";
             this.lbl_w2.Size = new System.Drawing.Size(13, 13);
             this.lbl_w2.TabIndex = 25;
@@ -185,7 +176,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(196, 52);
+            this.label8.Location = new System.Drawing.Point(231, 52);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(21, 13);
             this.label8.TabIndex = 24;
@@ -194,7 +185,7 @@
             // lbl_w1
             // 
             this.lbl_w1.AutoSize = true;
-            this.lbl_w1.Location = new System.Drawing.Point(241, 28);
+            this.lbl_w1.Location = new System.Drawing.Point(270, 28);
             this.lbl_w1.Name = "lbl_w1";
             this.lbl_w1.Size = new System.Drawing.Size(13, 13);
             this.lbl_w1.TabIndex = 23;
@@ -203,7 +194,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(196, 28);
+            this.label10.Location = new System.Drawing.Point(231, 28);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(21, 13);
             this.label10.TabIndex = 22;
@@ -212,7 +203,7 @@
             // lbl_lr
             // 
             this.lbl_lr.AutoSize = true;
-            this.lbl_lr.Location = new System.Drawing.Point(82, 78);
+            this.lbl_lr.Location = new System.Drawing.Point(196, 28);
             this.lbl_lr.Name = "lbl_lr";
             this.lbl_lr.Size = new System.Drawing.Size(13, 13);
             this.lbl_lr.TabIndex = 21;
@@ -221,7 +212,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 78);
+            this.label5.Location = new System.Drawing.Point(120, 28);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 13);
             this.label5.TabIndex = 20;
@@ -263,12 +254,78 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "# iteration";
             // 
+            // lbl_accuracy
+            // 
+            this.lbl_accuracy.AutoSize = true;
+            this.lbl_accuracy.Location = new System.Drawing.Point(196, 52);
+            this.lbl_accuracy.Name = "lbl_accuracy";
+            this.lbl_accuracy.Size = new System.Drawing.Size(13, 13);
+            this.lbl_accuracy.TabIndex = 27;
+            this.lbl_accuracy.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(120, 52);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 13);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Accuracy";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.chart2_errorperepoch);
+            this.groupBox5.Location = new System.Drawing.Point(582, 89);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(564, 342);
+            this.groupBox5.TabIndex = 18;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Error Plot";
+            // 
+            // chart2_errorperepoch
+            // 
+            chartArea6.Name = "ChartArea1";
+            this.chart2_errorperepoch.ChartAreas.Add(chartArea6);
+            legend6.Enabled = false;
+            legend6.Name = "Legend1";
+            this.chart2_errorperepoch.Legends.Add(legend6);
+            this.chart2_errorperepoch.Location = new System.Drawing.Point(10, 14);
+            this.chart2_errorperepoch.Name = "chart2_errorperepoch";
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.chart2_errorperepoch.Series.Add(series6);
+            this.chart2_errorperepoch.Size = new System.Drawing.Size(548, 321);
+            this.chart2_errorperepoch.TabIndex = 1;
+            this.chart2_errorperepoch.Text = "chart2";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.pictureBox1);
+            this.groupBox3.Location = new System.Drawing.Point(12, 417);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(382, 254);
+            this.groupBox3.TabIndex = 16;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Perceptron";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.Picture2;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(369, 229);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(972, 419);
+            this.ClientSize = new System.Drawing.Size(1156, 672);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -279,10 +336,12 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart2_errorperepoch)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -296,8 +355,6 @@
         private System.Windows.Forms.Button btn_browse;
         private System.Windows.Forms.TextBox txtfilelocation;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label lbl_w2;
         private System.Windows.Forms.Label label8;
@@ -309,6 +366,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbl_iteration;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_accuracy;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2_errorperepoch;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

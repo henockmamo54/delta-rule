@@ -69,6 +69,7 @@ namespace WindowsFormsApplication1
             mychart.Series["Series1"].ChartType = SeriesChartType.Point;
             mychart.Series["Series3"].ChartType = SeriesChartType.Point;
             mychart.Series["Series2"].ChartType = SeriesChartType.Line;
+            chart2_errorperepoch.Series["Series1"].ChartType = SeriesChartType.Line;
             mychart.Series["Series2"].BorderWidth = 2;
 
             // for scater plot
@@ -107,6 +108,7 @@ namespace WindowsFormsApplication1
 
                 lbl_w1.Text = weightsHistory[chart_index][0].ToString();
                 lbl_w2.Text = weightsHistory[chart_index][1].ToString();
+                drawErrorLine((int)(chart_index / 100));
                 chart_index = chart_index + chartstepSize;
             }
             if (chart_index >= slope.Count & isChartUpdateEnabled)
@@ -115,6 +117,8 @@ namespace WindowsFormsApplication1
 
                 lbl_w1.Text = weightsHistory[slope.Count - 1][0].ToString();
                 lbl_w2.Text = weightsHistory[slope.Count - 1][1].ToString();
+                lbl_accuracy.Text = errorValues[errorValues.Count - 1] + "%";
+                drawErrorLine(errorValues.Count-1);
                 isChartUpdateEnabled = false;
             }
 
@@ -254,6 +258,18 @@ namespace WindowsFormsApplication1
             }
             catch (Exception e) { }
 
+        }
+
+        public void drawErrorLine(int index)
+        {
+            List<int> x = new List<int>();
+            List<double> y = new List<double>();
+            for (int i = 0; i <= index; i++)
+            {
+                x.Add(i);
+                y.Add(errorValues[i]);
+            }
+            chart2_errorperepoch.Series["Series1"].Points.DataBindXY(x, y);
         }
 
         private void button1_Click(object sender, EventArgs e)

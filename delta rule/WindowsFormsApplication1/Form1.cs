@@ -23,7 +23,7 @@ namespace WindowsFormsApplication1
         bool isChartUpdateEnabled = false;
         int chartstepSize = 10;
         int accuracy = 90;
-        bool isShuffleOn = false;
+        bool isShuffleOn = true;
 
         public Form1()
         {
@@ -124,7 +124,7 @@ namespace WindowsFormsApplication1
 
         }
 
-        public static List<double[]> readFile(string fileLocation = "data-3.csv")
+        public static List<double[]> readFile(string fileLocation = "data-4.csv")
         {
 
             List<double[]> listA = new List<double[]>();
@@ -182,6 +182,7 @@ namespace WindowsFormsApplication1
             while (i < numItteration)
             {
                 error_count = 0;
+                if(isShuffleOn)
                 Shuffle(data);
 
                 // for each instance (row) itterate and adjust the weight

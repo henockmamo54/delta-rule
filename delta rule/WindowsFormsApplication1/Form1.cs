@@ -19,11 +19,11 @@ namespace WindowsFormsApplication1
         List<double[]> weightsHistory = new List<double[]>();
         int chart_index = 0;
         double theta = 0.55;
-        int numItteration = 100;
+        int numItteration = 500;
         bool isChartUpdateEnabled = false;
         int chartstepSize = 10;
         int accuracy = 90;
-        bool isShuffleOn = true;
+        bool isShuffleOn = false;
 
         public Form1()
         {
@@ -108,7 +108,7 @@ namespace WindowsFormsApplication1
 
                 lbl_w1.Text = weightsHistory[chart_index][0].ToString();
                 lbl_w2.Text = weightsHistory[chart_index][1].ToString();
-                drawErrorLine((int)(chart_index / 100));
+                drawErrorLine((int)(chart_index));
                 chart_index = chart_index + chartstepSize;
             }
             if (chart_index >= slope.Count & isChartUpdateEnabled)
@@ -118,7 +118,7 @@ namespace WindowsFormsApplication1
                 lbl_w1.Text = weightsHistory[slope.Count - 1][0].ToString();
                 lbl_w2.Text = weightsHistory[slope.Count - 1][1].ToString();
                 lbl_accuracy.Text = errorValues[errorValues.Count - 1] + "%";
-                drawErrorLine(errorValues.Count-1);
+                drawErrorLine(errorValues.Count - 1);
                 isChartUpdateEnabled = false;
             }
 
@@ -179,12 +179,14 @@ namespace WindowsFormsApplication1
             // loop the code for the desired itteration count
             //for (int i = 0; i < numItteration; i++)
             int i = 0, error_count = 0;
-            while (i < numItteration)
+            while (i < 1000)
             {
                 error_count = 0;
-                if(isShuffleOn)
-                Shuffle(data);
+                if (isShuffleOn)
+                    Shuffle(data);
 
+                double delta_1 = 0;
+                double delta_2 = 0;
                 // for each instance (row) itterate and adjust the weight
                 for (int j = 0; j < dataRowCount; j++)
                 {
@@ -204,17 +206,19 @@ namespace WindowsFormsApplication1
                     double instancError = (data[j][dataColumnCount - 1] - output);
                     if (instancError != 0) error_count++;
 
+                    delta_1 += (instancError * data[j][0]);
+                    delta_2 += (instancError * data[j][1]);
 
                     // calculate delta and update weight
-                    for (int c = 0; c < dataColumnCount - 1; c++)
-                    {
-                        weights[c] = weights[c] + learningRate * (instancError * data[j][c]);
-                    }
+                    //for (int c = 0; c < dataColumnCount - 1; c++)
+                    //{
+                    //    weights[c] = weights[c] + learningRate * (instancError * data[j][c]);
+                    //}
 
-                    double[] weightsdata2 = { weights[0], weights[1] };
-                    weightsHistory.Add(weightsdata2);
-                    slope.Add(weights[0]);
-                    bias.Add(weights[1]);
+                    //double[] weightsdata2 = { weights[0], weights[1] };
+                    //weightsHistory.Add(weightsdata2);
+                    //slope.Add(weights[0]);
+                    //bias.Add(weights[1]);
                 }
 
                 // increment i
@@ -222,7 +226,18 @@ namespace WindowsFormsApplication1
 
 
                 errorValues.Add(error_count);
-                if ((100 * error_count / dataRowCount) < 10) break;
+                if ((100 * error_count / dataRowCount) < 10)
+                {
+                    break;
+                }
+
+                weights[0] = weights[0] + learningRate * delta_1 / dataRowCount;
+                weights[1] = weights[1] + learningRate * delta_2 / dataRowCount;
+
+                double[] weightsdata2 = { weights[0], weights[1] };
+                weightsHistory.Add(weightsdata2);
+                slope.Add(weights[0]);
+                bias.Add(weights[1]);
             }
 
             File.WriteAllText("errorList.txt", String.Empty);

@@ -55,15 +55,13 @@ namespace WindowsFormsApplication1
                 mychart.Series.Add("Series3");
             }
             catch (Exception e) { }
-
-            //mychart.ChartAreas[0].AxisY.Maximum = 6;
-            //mychart.ChartAreas[0].AxisY.Minimum = -4;
-            //mychart.ChartAreas[0].AxisX.Maximum = 4;
-            //mychart.ChartAreas[0].AxisX.Minimum = -1;
+            
             mychart.ChartAreas[0].AxisY.Maximum = 1.1;
             mychart.ChartAreas[0].AxisY.Minimum = -0.2;
             mychart.ChartAreas[0].AxisX.Maximum = 1.1;
             mychart.ChartAreas[0].AxisX.Minimum = -0.2;
+            chart2_errorperepoch.ChartAreas[0].AxisY.Maximum = 80;
+            chart2_errorperepoch.ChartAreas[0].AxisY.Minimum = 0;
             chart1.ChartAreas[0].AxisX.MajorGrid.LineWidth = 0;
             chart1.ChartAreas[0].AxisY.MajorGrid.LineWidth = 0;
             mychart.Series["Series1"].ChartType = SeriesChartType.Point;
@@ -208,17 +206,6 @@ namespace WindowsFormsApplication1
 
                     delta_1 += (instancError * data[j][0]);
                     delta_2 += (instancError * data[j][1]);
-
-                    // calculate delta and update weight
-                    //for (int c = 0; c < dataColumnCount - 1; c++)
-                    //{
-                    //    weights[c] = weights[c] + learningRate * (instancError * data[j][c]);
-                    //}
-
-                    //double[] weightsdata2 = { weights[0], weights[1] };
-                    //weightsHistory.Add(weightsdata2);
-                    //slope.Add(weights[0]);
-                    //bias.Add(weights[1]);
                 }
 
                 // increment i
